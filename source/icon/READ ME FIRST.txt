@@ -1,0 +1,26 @@
+How to install:
+
+1.) Browse to C:\Users\Public\Documents\Stardock\IconPackager
+
+2.) Copy the folder Windows98Scaled into that directory.
+
+3.) The folder Windows98Scaled should now be in C:\Users\Public\Documents\Stardock\IconPackager
+
+4.) Open IconPackager, apply and enjoy!
+
+
+
+
+
+NOTICE:
+
+I seem to have issues in Windows 10 with IconPackager not applying icon packs correctly and randomly DELETING icons from said packs.
+If you have this issue, I have the solution for you!
+
+Go back to C:\Users\Public\Documents\Stardock\IconPackager
+Select the Windows98Scaled folder, and right click it
+Click 'Properties'
+Click the 'Security' tab
+Click 'Edit'
+Now, under each Group/User, you need to check the DENY box next to 'Write'
+What that does is it prevents IconPackager (and anything else) from deleting icons as it applies them :)
