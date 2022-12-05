@@ -113,11 +113,14 @@ function taskbarClk() {
 
     let openpage = $(".open-page");
 
+    //태스크 바를 클릭한 곳은 활성화가 되고 다른 것들은 풀려라
     $(this).addClass("taskclk");
     $(".page-taskbar").not($(this)).removeClass("taskclk");
 
     $(`.${openpgClsName}`).css("z-index", "9");
     openpage.not($(`.${openpgClsName}`)).css("z-index", "1");
+
+    $(`.${openpgClsName}`).removeClass("btnmin-clk");
   });
 }
 
@@ -137,8 +140,14 @@ function pageBtn() {
     $(this).parents(".open-page").removeClass("open-webPage");
   });
 
-  $(".header-min").on("click", function () {
-    $(this).parents(".open-page").addClass("btnmin-clk");
+  $(".header-min").on("click", function (e) {
+    let thsOpenpg = $(this).parents(".open-page");
+    let idx = thsOpenpg.index();
+    let list = content[idx - 1];
+
+    e.stopPropagation(); //이벤트 버블링 방지
+    thsOpenpg.addClass("btnmin-clk");
+    $(`.${list.className}-taskbar`).removeClass("taskclk");
   });
 }
 
