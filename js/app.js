@@ -68,17 +68,25 @@ function icondbl() {
 
     //아이콘을 클릭하면 아이콘에 해당하는 화면이 나오고 0.1초뒤 클래스를 붙여준다
     pageIdx.fadeIn();
+
+    pageIdx.not().css("z-index", "1");
+    pageIdx.css("z-index", "9");
+    $(".open-page").not(pageIdx).css("z-index", "1");
+
     setTimeout(function () {
       pageIdx.addClass("open-webPage");
     }, 100);
 
-    let insTag = `<div class='page-taskbar ${list.className}-taskbar'>
+    let insTag = `<div class='page-taskbar ${list.className}-taskbar taskclk'>
   <img src='./source/icon/ico-${list.img}.ico' alt='' />
   <p>${list.name}</p>
 </div>`;
 
     if (pageIdx.hasClass("open-webPage") == false) {
       centerTask.append(insTag);
+      $(".page-taskbar")
+        .not($(`.${list.className}-taskbar`))
+        .removeClass("taskclk");
       //위에서 open-webPage가 먼저 주어지기때문에 settimeout 부여
     }
   });
@@ -90,11 +98,7 @@ function icondbl() {
     let list = content[tpIdx - 1];
     let closedClsName = list.className;
 
-    // 하드코딩?
-
-    if (thispage.hasClass(`'${closedClsName}'`) == true) {
-      $(`'.${closedClsName}-taskbar'`).remove();
-    }
+    $(`.${closedClsName}-taskbar`).remove();
   });
 }
 
@@ -103,7 +107,17 @@ function taskbarClk() {
   let pgtask = ".page-taskbar";
 
   docu.on("click", pgtask, function () {
+    let pgtaskClsname = $(this).attr("class");
+    let pgtcnfront = pgtaskClsname.slice(13);
+    let openpgClsName = pgtcnfront.slice(0, -8);
+
+    let openpage = $(".open-page");
+
     $(this).addClass("taskclk");
+    $(".page-taskbar").not($(this)).removeClass("taskclk");
+
+    $(`.${openpgClsName}`).css("z-index", "9");
+    openpage.not($(`.${openpgClsName}`)).css("z-index", "1");
   });
 }
 
@@ -149,6 +163,18 @@ function pageSet() {
     page.draggable("destroy");
   });
 
+  //페이지를 누르면 아래쪽 태스크바가 활성화
+  page.on("click", function () {
+    //이 페이지의 순서와 content배열의 순서 일치
+    let idx = $(this).index();
+    let list = content[idx - 1];
+
+    let pgtaskbar = $(".page-taskbar");
+
+    $(`.${list.className}-taskbar`).addClass("taskclk");
+    pgtaskbar.not($(`.${list.className}-taskbar`)).removeClass("taskclk");
+  });
+
   page.resizable({
     maxHeight: 840,
     maxWidth: 1660,
@@ -169,6 +195,7 @@ function startBtn() {
   });
 }
 
+//시작버튼에서 다시시작과 종료버튼 클릭
 function startEvents() {
   let restart = $(".start-restart");
   let shutdown = $(".start-shutdown");
@@ -182,6 +209,7 @@ function startEvents() {
   });
 }
 
+// 시간 표시
 function timeSet() {
   let hours = $(".hour");
   let daynnight = $(".daynnight");
@@ -202,6 +230,7 @@ function timeSet() {
   $(".min").text(zeromin);
 }
 
+//시간의 변화가 화면에 보이도록 설정
 function clock() {
   setInterval("timeSet()", 1000);
 }
