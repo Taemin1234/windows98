@@ -9,6 +9,7 @@ $(function () {
   startBtn(); // 시작버튼 클릭
   startEvents(); //시작버튼 이벤트
   clock(); // 시간
+  skills(); // 스킬 게이지
 });
 
 let wd = $(window);
@@ -242,4 +243,40 @@ function timeSet() {
 //시간의 변화가 화면에 보이도록 설정
 function clock() {
   setInterval("timeSet()", 1000);
+}
+
+//function skills() {}
+
+// https://gahyun-web-diary.tistory.com/93
+
+// function skillChart(gauge, skillClass, firstColor, secondColor) {
+//   let i = 1;
+//   let func1 = setInterval(function () {
+//     if (i < gauge) {
+//       gradientColor(i, skillClass, firstColor, secondColor);
+//       i++;
+//     } else {
+//       clearInterval(func1);
+//     }
+//   }, 10);
+// }
+function skills() {
+  $(".skl-html").click(function () {
+    //skillChart(90, ".skl-html", "black", "grey");
+    gradientColor(90, ".skl-html", "black", "grey");
+  });
+}
+
+function gradientColor(i, skillClass, firstColor, secondColor) {
+  $(skillClass).css({
+    background:
+      "conic-gradient(" +
+      firstColor +
+      "0%," +
+      secondColor +
+      +i +
+      "%, #ffffff " +
+      i +
+      "% 100%)",
+  });
 }
