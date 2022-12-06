@@ -70,6 +70,14 @@ $taskbar: #c0c0c0;
 $startbar: #00046d;
 $startbar-end: #000adc;
 
+//형광색
+$neongreenyellow: #2ff40a;
+$neonlightgreen: #00ff80;
+$neonredpurple: #cf0af4;
+$neonpurple: #5a0af4;
+$neonbluegreen: #0af4cf;
+$neonyellow: #ffff00;
+
 body {
   //font-family: $dgm;
   font-family: $windows;
@@ -246,8 +254,8 @@ body {
   top: 140px;
   left: 230px;
 
-  width: 1000px;
-  height: 680px;
+  width: 1200px;
+  height: 720px;
   background-color: $taskbar;
 
   border-top: 2px solid #efefef;
@@ -385,6 +393,126 @@ body {
   border-left: 3px solid silver;
   border-right: 3px solid silver;
   border-bottom: 3px solid silver;
+}
+
+.page-inner {
+  @extend %flex-center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.pg-inner {
+  height: 100%;
+  width: 50%;
+
+  padding: 10px;
+
+  p {
+    line-height: 1.3;
+  }
+}
+
+.pg-inner-left {
+  border-right: solid 2px #eee;
+}
+
+.career-detail {
+  margin-bottom: 15px;
+
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.myinfo,
+.contact-me {
+  height: 20%;
+}
+
+.company,
+.learning {
+  height: 20%;
+}
+
+.myinfo {
+  .myname {
+    font-size: 32px;
+  }
+}
+
+.pg-inner-right {
+  h2 {
+    margin-bottom: 15px;
+  }
+}
+
+.skills {
+  position: relative;
+  width: 100px;
+  height: 130px;
+
+  p {
+    font-weight: bold;
+  }
+}
+
+.skill-gauge {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.skill-name {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.skills-mark {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 3px 0;
+
+  transition: all 0.3s;
+}
+
+.skl-figma {
+  background: conic-gradient($neonpurple 0%, $neonredpurple 75%, #fff 75% 100%);
+}
+
+.skills-icon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #fff;
+  text-align: center;
+
+  border-radius: 50%;
+
+  line-height: 53px;
+
+  img {
+    width: 75%;
+  }
 }
 
 .page-footer-bar {
