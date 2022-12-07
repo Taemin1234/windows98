@@ -264,19 +264,12 @@ function skills() {
   $(".skl-html").click(function () {
     //skillChart(90, ".skl-html", "black", "grey");
     gradientColor(90, ".skl-html", "black", "grey");
+    console.log("hello");
   });
 }
 
 function gradientColor(i, skillClass, firstColor, secondColor) {
-  $(skillClass).css({
-    background:
-      "conic-gradient(" +
-      firstColor +
-      "0%," +
-      secondColor +
-      +i +
-      "%, #ffffff " +
-      i +
-      "% 100%)",
-  });
+  $(skillClass).css(
+    `background,conic-gradient(${firstColor} 0%, ${secondColor} ${i}%, #fff ${i}% 100%`
+  );
 }
