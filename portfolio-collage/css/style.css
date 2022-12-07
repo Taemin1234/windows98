@@ -1,0 +1,51 @@
+body {
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.background img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation: space 20s linear infinite;
+          animation: space 20s linear infinite;
+}
+
+@-webkit-keyframes space {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes space {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+.main-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.kkk {
+  width: 200px;
+  height: 200px;
+  background-color: green;
+}
