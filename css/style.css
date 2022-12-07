@@ -8,7 +8,7 @@
   font-family: "windows-regular";
   unicode-range: U+AC00-D7A3;
 }
-.clock-shortcut-wrap, .page-taskbar, .center-task, .divide, .left-task, .start-list-wrap li, .start-list-wrap, .menu-bar ul, .hb-left {
+.clock-shortcut-wrap, .page-taskbar, .center-task, .divide, .left-task, .start-list-wrap li, .start-list-wrap, .page-inner, .menu-bar ul, .hb-left {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -24,7 +24,7 @@
   align-items: center;
 }
 
-.btn-shortcut, .btn-start, .page-inner, .loading-ani {
+.btn-shortcut, .btn-start, .page-inner-aboutme, .loading-ani {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -320,6 +320,20 @@ body {
 }
 .pg-inner p {
   line-height: 1.3;
+}
+
+.page-inner {
+  align-items: baseline;
+}
+.page-inner .icon-wrap {
+  margin: 0;
+  padding: 10px 0;
+}
+.page-inner .icon-wrap a {
+  display: block;
+}
+.page-inner .icon-wrap p {
+  color: #000;
 }
 
 .pg-inner-left {
