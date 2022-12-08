@@ -10,6 +10,7 @@ $(function () {
   startEvents(); //시작버튼 이벤트
   clock(); // 시간
   skills(); // 스킬 게이지
+  fileCount(); // 창 하단 숫자
 });
 
 let wd = $(window);
@@ -249,27 +250,39 @@ function clock() {
 
 // https://gahyun-web-diary.tistory.com/93
 
-// function skillChart(gauge, skillClass, firstColor, secondColor) {
-//   let i = 1;
-//   let func1 = setInterval(function () {
-//     if (i < gauge) {
-//       gradientColor(i, skillClass, firstColor, secondColor);
-//       i++;
-//     } else {
-//       clearInterval(func1);
-//     }
-//   }, 10);
-// }
 function skills() {
-  $(".skl-html").click(function () {
-    //skillChart(90, ".skl-html", "black", "grey");
-    gradientColor(90, ".skl-html", "black", "grey");
-    console.log("hello");
+  wd.ready(function () {
+    skillChart(50, ".skl-figma", "#5a0af4", "#cf0af4");
+    skillChart(90, ".skl-html", "#5a0af4", "#cf0af4");
+    skillChart(90, ".skl-css", "#5a0af4", "#cf0af4");
+    skillChart(60, ".skl-js", "#5a0af4", "#cf0af4");
+    skillChart(85, ".skl-jq", "#5a0af4", "#cf0af4");
+    skillChart(70, ".skl-sass", "#5a0af4", "#cf0af4");
+    skillChart(30, ".skl-react", "#5a0af4", "#cf0af4");
   });
 }
 
+function skillChart(gauge, skillClass, firstColor, secondColor) {
+  let i = 1;
+  let func1 = setInterval(function () {
+    if (i < gauge) {
+      gradientColor(i, skillClass, firstColor, secondColor);
+      i++;
+    } else {
+      clearInterval(func1);
+    }
+  }, 10);
+}
+
 function gradientColor(i, skillClass, firstColor, secondColor) {
-  $(skillClass).css(
-    `background,conic-gradient(${firstColor} 0%, ${secondColor} ${i}%, #fff ${i}% 100%`
-  );
+  const bgCss = {
+    background: `conic-gradient(${firstColor} 0%, ${secondColor} ${i}%, #fff ${i}% 100%)`,
+  };
+  $(skillClass).css(bgCss);
+}
+
+function fileCount() {
+  let sklCount = $(".skills").length;
+
+  $(".skillCount").text(sklCount);
 }
