@@ -370,8 +370,10 @@ body {
 
 .skills {
   position: relative;
+  display: inline-block;
   width: 100px;
   height: 130px;
+  margin: 10px 0;
 }
 .skills p {
   font-weight: bold;
@@ -403,10 +405,6 @@ body {
   transition: all 0.3s;
 }
 
-.skl-figma {
-  background: conic-gradient(#5a0af4 0%, #cf0af4 75%, #fff 75% 100%);
-}
-
 .skills-icon {
   position: absolute;
   width: 60px;
@@ -421,6 +419,10 @@ body {
 }
 .skills-icon img {
   width: 75%;
+}
+
+.skl-js img {
+  width: 65%;
 }
 
 .page-footer-bar {
