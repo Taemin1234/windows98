@@ -8,7 +8,7 @@ $starjedi: "star-jedi";
 $notosans: "Noto Sans KR", sans-serif;
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 
   color: #fff;
   font-family: $notosans;
@@ -33,6 +33,14 @@ body {
     object-fit: cover;
 
     animation: space 20s linear infinite;
+  }
+}
+
+.bg2 {
+  height: 70%;
+
+  img {
+    top: 100%;
   }
 }
 
@@ -97,8 +105,20 @@ body {
 }
 
 .img-wrap {
+  position: relative;
+
   width: 100%;
+  height: 0;
+  padding-bottom: 50%;
   margin-bottom: 10px;
+}
+
+.img-ratio {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 
   img {
     width: 100%;
@@ -114,8 +134,57 @@ body {
 }
 
 .mp-title {
+  height: 50px;
   font-size: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 
   text-align: center;
+}
+
+.mp-content {
+  span {
+    border: solid 2px #fff;
+    border-radius: 5px;
+    padding: 3px;
+  }
+
+  p {
+    margin: 20px 0 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .bg2 {
+    height: 100%;
+  }
+
+  .portfolio-list {
+    width: 90%;
+  }
+
+  .masterpiece {
+    width: 45%;
+  }
+
+  .explain-mine {
+    height: 132px;
+  }
+}
+
+@media (max-width: 500px) {
+  .bg2 {
+    height: 225%;
+
+    img {
+      top: 44%;
+    }
+  }
+
+  .masterpiece {
+    width: 90%;
+
+    display: block;
+
+    margin: 30px auto;
+  }
 }
