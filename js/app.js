@@ -16,7 +16,7 @@ $(function () {
 let wd = $(window);
 
 let content = [
-  { img: "internet", name: "Internet explorer", className: "internet" },
+  { img: "book", name: "포트폴리오 가이드", className: "internet" },
   { img: "folder", name: "Portfolio", className: "portfolio" },
   { img: "people", name: "About me", className: "aboutme" },
   { img: "question", name: "Contact", className: "contact" },
@@ -204,6 +204,15 @@ function startBtn() {
 
     startlist.toggleClass("start-list-up");
   });
+
+  //다른곳을 눌렀을때 시작버튼 사라짐
+  $("html").on("click", function (event) {
+    if (!$(event.target).hasClass("start-list-up")) {
+      btnStart.removeClass("btn-start-clk");
+      btnStart.removeClass("start-list-up");
+      console.log("외부");
+    }
+  });
 }
 
 //시작버튼에서 다시시작과 종료버튼 클릭
@@ -246,20 +255,20 @@ function clock() {
   setInterval("timeSet()", 1000);
 }
 
-//function skills() {}
-
 // https://gahyun-web-diary.tistory.com/93
 
 function skills() {
-  wd.ready(function () {
-    skillChart(50, ".skl-figma", "#5a0af4", "#cf0af4");
-    skillChart(90, ".skl-html", "#5a0af4", "#cf0af4");
-    skillChart(90, ".skl-css", "#5a0af4", "#cf0af4");
-    skillChart(60, ".skl-js", "#5a0af4", "#cf0af4");
-    skillChart(85, ".skl-jq", "#5a0af4", "#cf0af4");
-    skillChart(70, ".skl-sass", "#5a0af4", "#cf0af4");
-    skillChart(30, ".skl-react", "#5a0af4", "#cf0af4");
-  });
+  $(".icon-wrap")
+    .eq(2)
+    .on("dblclick", function () {
+      skillChart(50, ".skl-figma", "#cf0af4", "#5a0af4");
+      skillChart(90, ".skl-html", "#9AE60D", "#2ff40a");
+      skillChart(90, ".skl-css", "#9AE60D", "#2ff40a");
+      skillChart(60, ".skl-js", "#9AE60D", "#2ff40a");
+      skillChart(85, ".skl-jq", "#9AE60D", "#2ff40a");
+      skillChart(70, ".skl-sass", "#9AE60D", "#2ff40a");
+      skillChart(30, ".skl-react", "#0af4cf", "#011ffd");
+    });
 }
 
 function skillChart(gauge, skillClass, firstColor, secondColor) {
@@ -283,6 +292,8 @@ function gradientColor(i, skillClass, firstColor, secondColor) {
 
 function fileCount() {
   let sklCount = $(".skills").length;
+  let porfolCount = $(".page-inner .icon-wrap").length;
 
   $(".skillCount").text(sklCount);
+  $(".porfolCount").text(porfolCount);
 }
