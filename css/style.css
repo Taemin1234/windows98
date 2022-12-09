@@ -205,7 +205,7 @@ body {
   border-bottom: 2px solid #000;
 }
 
-.internet,
+.aboutme,
 .portfolio,
 .contact {
   display: none;
@@ -306,6 +306,25 @@ body {
   border-left: 3px solid silver;
   border-right: 3px solid silver;
   border-bottom: 3px solid silver;
+}
+
+.second-page {
+  background-color: #c0c0c0;
+}
+.second-page .page-inner {
+  border-radius: 3px;
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #0a0a0a;
+  border-bottom: 1px solid #808080;
+}
+.second-page .paga-inner-left {
+  width: 40%;
+  height: 100%;
+}
+.second-page .page-inner-right {
+  width: 60%;
+  height: 100%;
 }
 
 .page-inner {

@@ -71,12 +71,12 @@ $startbar: #00046d;
 $startbar-end: #000adc;
 
 //형광색
-$neongreenyellow: #2ff40a;
-$neonlightgreen: #00ff80;
-$neonredpurple: #cf0af4;
-$neonpurple: #5a0af4;
-$neonbluegreen: #0af4cf;
-$neonyellow: #ffff00;
+$neongreen1: #2ff40a;
+$neongreen2: #9ae60d;
+$neonpurple1: #cf0af4;
+$neonpurple2: #5a0af4;
+$neonblue1: #0af4cf;
+$neonblue2: #011ffd;
 
 body {
   //font-family: $dgm;
@@ -264,7 +264,7 @@ body {
   border-bottom: 2px solid #000;
 }
 
-.internet,
+.aboutme,
 .portfolio,
 .contact {
   display: none;
@@ -393,6 +393,29 @@ body {
   border-left: 3px solid silver;
   border-right: 3px solid silver;
   border-bottom: 3px solid silver;
+}
+
+.second-page {
+  background-color: $taskbar;
+
+  .page-inner {
+    border-radius: 3px;
+
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #0a0a0a;
+    border-bottom: 1px solid #808080;
+  }
+
+  .paga-inner-left {
+    width: 40%;
+    height: 100%;
+  }
+
+  .page-inner-right {
+    width: 60%;
+    height: 100%;
+  }
 }
 
 .page-inner {
