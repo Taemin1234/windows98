@@ -201,16 +201,14 @@ function startBtn() {
 
   btnStart.on("click", function () {
     btnStart.toggleClass("btn-start-clk");
-
     startlist.toggleClass("start-list-up");
   });
 
   //다른곳을 눌렀을때 시작버튼 사라짐
   $("html").on("click", function (event) {
-    if (!$(event.target).hasClass("start-list-up")) {
+    if (!$(event.target).hasClass("hideCheck")) {
       btnStart.removeClass("btn-start-clk");
-      btnStart.removeClass("start-list-up");
-      console.log("외부");
+      startlist.removeClass("start-list-up");
     }
   });
 }
