@@ -407,20 +407,33 @@ body {
     border-bottom: 1px solid #808080;
   }
 
-  .paga-inner-left {
-    width: 40%;
-    height: 100%;
+  .page-inner-left {
+    width: 460px;
+  }
+
+  .computer-wrap {
+    width: 180px;
+    height: 180px;
+
+    margin: 0 auto;
+    margin-top: 80px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .page-inner-right {
-    width: 60%;
-    height: 100%;
+    width: 680px;
   }
 }
 
 .page-inner {
   width: 100%;
   height: 100%;
+
+  overflow: scroll;
 }
 
 .pg-inner {
@@ -476,12 +489,12 @@ body {
 
 .myinfo,
 .contact-me {
-  height: 20%;
+  height: 125px;
 }
 
 .company,
 .learning {
-  height: 20%;
+  height: 125px;
 }
 
 .myinfo {
@@ -602,6 +615,7 @@ body {
   border-right: inset 3px #0b0d0c;
 
   transition: all 0.3s;
+  z-index: 100;
 }
 
 .start-list-up {
@@ -690,6 +704,8 @@ body {
   background-color: $taskbar;
 
   border-top: outset 3px #fff;
+
+  z-index: 105;
 }
 
 .left-task {

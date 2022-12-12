@@ -318,18 +318,27 @@ body {
   border-right: 1px solid #0a0a0a;
   border-bottom: 1px solid #808080;
 }
-.second-page .paga-inner-left {
-  width: 40%;
+.second-page .page-inner-left {
+  width: 460px;
+}
+.second-page .computer-wrap {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.second-page .computer-wrap img {
+  width: 100%;
   height: 100%;
 }
 .second-page .page-inner-right {
-  width: 60%;
-  height: 100%;
+  width: 680px;
 }
 
 .page-inner {
   width: 100%;
   height: 100%;
+  overflow: scroll;
 }
 
 .pg-inner {
@@ -371,12 +380,12 @@ body {
 
 .myinfo,
 .contact-me {
-  height: 20%;
+  height: 125px;
 }
 
 .company,
 .learning {
-  height: 20%;
+  height: 125px;
 }
 
 .myinfo .myname {
@@ -471,6 +480,7 @@ body {
   border-bottom: inset 3px #0b0d0c;
   border-right: inset 3px #0b0d0c;
   transition: all 0.3s;
+  z-index: 100;
 }
 
 .start-list-up {
@@ -532,6 +542,7 @@ body {
   left: 0;
   background-color: #c0c0c0;
   border-top: outset 3px #fff;
+  z-index: 105;
 }
 
 .left-task {
