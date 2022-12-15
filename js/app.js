@@ -188,7 +188,7 @@ function pageSet() {
 
   page.resizable({
     maxHeight: 840,
-    maxWidth: 1660,
+    maxWidth: 1400,
     minHeight: 240,
     minWidth: 240,
   });
