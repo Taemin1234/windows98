@@ -32,9 +32,17 @@
   align-items: center;
 }
 
-.clock-wrap, .task-bar, .header-bar {
+.clock-wrap, .task-bar, .career-detail-wrap, .header-bar {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pg-inner-right {
+  display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
@@ -194,10 +202,10 @@ body {
 
 .open-page {
   position: fixed;
-  top: 140px;
-  left: 230px;
-  width: 1200px;
-  height: 720px;
+  width: 62%;
+  height: 75%;
+  max-width: 1400px;
+  max-height: 840px;
   background-color: #c0c0c0;
   border-top: 2px solid #efefef;
   border-left: 2px solid #efefef;
@@ -212,18 +220,23 @@ body {
 }
 
 .internet {
-  top: 100px;
-  left: 190px;
+  top: 8%;
+  left: 11%;
 }
 
 .portfolio {
-  top: 120px;
-  left: 210px;
+  top: 11%;
+  left: 12%;
+}
+
+.aboutme {
+  top: 14%;
+  left: 13%;
 }
 
 .contact {
-  top: 160px;
-  left: 250px;
+  top: 17%;
+  left: 14%;
 }
 
 .btnmin-clk {
@@ -368,6 +381,10 @@ body {
   border-right: solid 2px #eee;
 }
 
+.career-detail-wrap {
+  width: 100%;
+}
+
 .career-detail {
   margin-bottom: 15px;
 }
@@ -378,22 +395,31 @@ body {
   margin-bottom: 0;
 }
 
-.myinfo,
 .contact-me {
-  height: 125px;
+  height: 100px;
 }
 
 .company,
 .learning {
-  height: 125px;
+  width: 50%;
+  height: 230px;
 }
 
+.myinfo {
+  height: 180px;
+  border-bottom: solid 1px #ddd;
+}
 .myinfo .myname {
   font-size: 32px;
+  margin-bottom: 25px;
 }
 
 .pg-inner-right h2 {
   margin-bottom: 15px;
+}
+
+.skills-wrap {
+  width: 620px;
 }
 
 .skills {
@@ -447,6 +473,25 @@ body {
 }
 .skills-icon img {
   width: 75%;
+}
+
+.mystudy {
+  width: 620px;
+  height: 150px;
+  padding: 10px;
+  border-top: solid 1px #eee;
+}
+
+.ms-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 8px;
+  overflow: hidden;
+}
+.ms-icon img {
+  width: 100%;
 }
 
 .skl-js img {
