@@ -2,7 +2,8 @@ $(function () {
   loading(); // 로딩창
   icon(); // 아이콘 설정
   icondbl(); //아이콘 더블클릭
-
+  type(); // 글자 타이핑
+  surpriseShow(); // 글자 나타나기
   taskbarClk(); // 태스크바 클릭
   pageBtn(); //페이지 버튼
   pageSet(); //페이지 속성
@@ -19,7 +20,7 @@ let content = [
   { img: "book", name: "포트폴리오 가이드", className: "internet" },
   { img: "folder", name: "Portfolio", className: "portfolio" },
   { img: "people", name: "About me", className: "aboutme" },
-  { img: "question", name: "Contact", className: "contact" },
+  { img: "emptyfolder", name: "가마우지", className: "newfolder" },
 ];
 
 function loadFadeOut() {
@@ -102,6 +103,52 @@ function icondbl() {
 
     $(`.${closedClsName}-taskbar`).remove();
   });
+}
+
+function type() {
+  var typingEnd = false;
+
+  function typingStart(turn) {
+    if (!typingEnd) {
+      var typingBool = false;
+      var typingIdx = 0;
+      var typingTxt = $(`.typing-txt-${turn}`).val(); // 타이핑될 텍스트를 가져온다
+      typingTxt = typingTxt.split(""); // 한글자씩 자른다.
+      if (typingBool == false) {
+        // 타이핑이 진행되지 않았다면
+        typingBool = true;
+
+        var tyInt = setInterval(typing, 200); // 반복동작(타이핑 시간을 제어할 수 있음)
+      }
+
+      function typing() {
+        if (typingIdx < typingTxt.length) {
+          // 타이핑될 텍스트 길이만큼 반복
+          $(`.type-${turn}`).append(typingTxt[typingIdx]); // 한글자씩 이어준다.
+          typingIdx++;
+        } else {
+          clearInterval(tyInt); //끝나면 반복종료
+          typingEnd = true;
+        }
+      }
+    }
+  }
+
+  //매개변수가 있고 setTimeout을 사용할 시 함수로 묶어주기
+  setTimeout(function () {
+    typingStart("first");
+  }, 4000);
+  setTimeout(function () {
+    typingStart("second");
+  }, 8000);
+}
+
+function surpriseShow() {
+  function spShow() {
+    $(".btm-alert").fadeIn();
+  }
+
+  setTimeout(spShow, 11000);
 }
 
 function taskbarClk() {
@@ -193,7 +240,6 @@ function pageSet() {
     minWidth: 240,
   });
 }
-// https://api.jqueryui.com/draggable/
 
 function startBtn() {
   let btnStart = $(".btn-start");
