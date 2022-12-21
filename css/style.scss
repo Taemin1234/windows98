@@ -265,7 +265,7 @@ body {
 
 .aboutme,
 .portfolio,
-.contact {
+.newfolder {
   display: none;
 }
 
@@ -284,7 +284,7 @@ body {
   left: 13%;
 }
 
-.contact {
+.newfolder {
   top: 17%;
   left: 14%;
 }
@@ -410,6 +410,9 @@ body {
     border-left: 1px solid #eee;
     border-right: 1px solid #0a0a0a;
     border-bottom: 1px solid #808080;
+
+    align-items: flex-start;
+    justify-content: space-between;
   }
 
   .page-inner-left {
@@ -431,6 +434,94 @@ body {
 
   .page-inner-right {
     width: 680px;
+
+    p {
+      font-size: 24px;
+    }
+
+    span {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    img {
+      width: 50px;
+      margin-left: -14px;
+    }
+  }
+
+  .window-wrap {
+    width: 600px;
+    height: 600px;
+
+    margin-top: 20px;
+  }
+
+  .window-top,
+  .window-btm {
+    height: 50%;
+  }
+
+  .window-top {
+    @extend %flex-start;
+
+    p {
+      margin-left: 10px;
+    }
+  }
+
+  .window-btm {
+    background-color: #fff;
+
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff,
+      inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  }
+
+  .btm-txt {
+    //width: 400px;
+  }
+
+  .btm-alert {
+    margin-top: 70px;
+
+    display: none;
+  }
+
+  .typing {
+    display: inline-block;
+    animation-name: cursor;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+
+    font-size: 24px !important;
+    font-weight: normal !important;
+  }
+  @keyframes cursor {
+    0% {
+      border-right: 1px solid #fff;
+    }
+    50% {
+      border-right: 1px solid #000;
+    }
+    100% {
+      border-right: 1px solid #fff;
+    }
+  }
+
+  .window-top-left,
+  .window-top-right,
+  .window-btm {
+    padding: 10px;
+  }
+
+  .window-top-left,
+  .window-top-right {
+  }
+
+  .window-top-left {
+  }
+
+  .window-top-right {
   }
 }
 
