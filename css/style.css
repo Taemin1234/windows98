@@ -8,7 +8,7 @@
   font-family: "windows-regular";
   unicode-range: U+AC00-D7A3;
 }
-.clock-shortcut-wrap, .page-taskbar, .center-task, .divide, .left-task, .start-list-wrap li, .start-list-wrap, .page-inner, .second-page .window-top, .menu-bar ul, .hb-left {
+.clock-shortcut-wrap, .page-taskbar, .center-task, .divide, .left-task, .start-list-wrap li, .start-list-wrap, .page-inner, .menu-bar ul, .hb-left {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -32,7 +32,7 @@
   align-items: center;
 }
 
-.clock-wrap, .task-bar, .career-detail-wrap, .header-bar {
+.clock-wrap, .task-bar, .career-detail-wrap, .second-page .window-top, .header-bar {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -334,7 +334,7 @@ body {
   justify-content: space-between;
 }
 .second-page .page-inner-left {
-  width: 460px;
+  width: 420px;
 }
 .second-page .computer-wrap {
   width: 180px;
@@ -347,37 +347,40 @@ body {
   height: 100%;
 }
 .second-page .page-inner-right {
-  width: 680px;
-}
-.second-page .page-inner-right p {
-  font-size: 24px;
+  width: 720px;
 }
 .second-page .page-inner-right span {
   font-size: 36px;
   font-weight: bold;
 }
-.second-page .page-inner-right img {
+.second-page .guide-txt {
+  font-size: 24px;
+  margin-top: 10px;
+}
+.second-page .guide-img {
   width: 50px;
   margin-left: -14px;
 }
 .second-page .window-wrap {
-  width: 600px;
-  height: 600px;
+  width: 640px;
+  height: 640px;
   margin-top: 20px;
 }
-.second-page .window-top,
-.second-page .window-btm {
+.second-page .window-top {
   height: 50%;
 }
 .second-page .window-top p {
   margin-left: 10px;
 }
 .second-page .window-btm {
+  height: 40%;
   background-color: #fff;
+  padding: 10px;
   box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
 }
 .second-page .btm-alert {
   margin-top: 70px;
+  font-size: 24px;
   display: none;
 }
 .second-page .typing {
@@ -414,9 +417,13 @@ body {
   }
 }
 .second-page .window-top-left,
-.second-page .window-top-right,
-.second-page .window-btm {
-  padding: 10px;
+.second-page .window-top-right {
+  width: 300px;
+  height: 300px;
+  border-top: 2px solid #efefef;
+  border-left: 2px solid #efefef;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
 }
 .page-inner {
   width: 100%;
