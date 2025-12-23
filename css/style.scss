@@ -88,7 +88,7 @@ body {
 /* loading page */
 
 .loading {
-  display: none;
+  display: block;
 
   width: 100%;
   height: 100%;
@@ -189,10 +189,12 @@ body {
     opacity: 0;
     transform: scale(0.5);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.2);
   }
+
   100% {
     opacity: 0;
     transform: scale(0.5);
@@ -301,11 +303,9 @@ body {
   width: 100%;
   height: 25px;
 
-  background: linear-gradient(
-    90deg,
-    rgba(0, 4, 109, 1) 0%,
-    rgba(0, 10, 220, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(0, 4, 109, 1) 0%,
+      rgba(0, 10, 220, 1) 100%);
 
   border-top: 2px solid silver;
   border-left: 3px solid silver;
@@ -494,13 +494,16 @@ body {
     font-size: 24px !important;
     font-weight: normal !important;
   }
+
   @keyframes cursor {
     0% {
       border-right: 1px solid #fff;
     }
+
     50% {
       border-right: 1px solid #000;
     }
+
     100% {
       border-right: 1px solid #fff;
     }
@@ -517,11 +520,9 @@ body {
     border-bottom: 2px solid #000;
   }
 
-  .window-top-left {
-  }
+  .window-top-left {}
 
-  .window-top-right {
-  }
+  .window-top-right {}
 }
 
 .page-inner {
@@ -810,11 +811,9 @@ body {
 .side-logo {
   height: 100%;
   padding: 4px 8px;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 4, 109, 1) 0%,
-    rgba(0, 10, 220, 1) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 4, 109, 1) 0%,
+      rgba(0, 10, 220, 1) 100%);
 
   font-family: $notosans;
   color: #fff;

@@ -29,7 +29,7 @@ function loadFadeOut() {
 
 function loading() {
   wd.on("load", function () {
-    setTimeout(loadFadeOut, 3000);
+    setTimeout(loadFadeOut, 1000);
   });
 }
 
@@ -137,10 +137,10 @@ function type() {
   //매개변수가 있고 setTimeout을 사용할 시 함수로 묶어주기
   setTimeout(function () {
     typingStart("first");
-  }, 4000);
+  }, 2000);
   setTimeout(function () {
     typingStart("second");
-  }, 8000);
+  }, 6000);
 }
 
 function surpriseShow() {
@@ -148,7 +148,7 @@ function surpriseShow() {
     $(".btm-alert").fadeIn();
   }
 
-  setTimeout(spShow, 11000);
+  setTimeout(spShow, 9000);
 }
 
 function taskbarClk() {
